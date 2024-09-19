@@ -1,0 +1,34 @@
+<mat-toolbar #toolbar>
+  <mat-toolbar-row class="main-header">
+    <button class="menu-list" mat-button mat-raised-button color="primary" [matMenuTriggerFor]="menu">
+      <mat-icon>list</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" yPosition="below">
+      <button mat-menu-item routerLink="/home">Home</button>
+      <button mat-menu-item routerLink="/pokedex">Pokedex</button>
+    </mat-menu>
+    <button mat-button>
+      <a routerLink="/home"><img class="logo" src="../../../assets/pokeapi_logo.png" alt="Icone site"></a>
+    </button>
+    <div class="selects">
+      <span [ngClass]="{'selected': selectedSpan === 'home'}"><a mat-button routerLink="/home" (click)="selectSpan('home')">Home</a></span>
+      <span [ngClass]="{'selected': selectedSpan === 'pokedex'}"><a mat-button routerLink="/pokedex" (click)="selectSpan('pokedex')">Pokedex</a></span>
+    </div>
+    <span class="spacer"></span>
+    <div class="buttons">
+      <button class="dark-mode" mat-button (click)="toggleDarkMode()">
+        <mat-icon>brightness_medium</mat-icon>
+      </button>
+      <a href="https://github.com/usmanaryk1/pokemonApp-angular17-material17">
+        <button mat-icon-button aria-label="Favorite icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+@if (!hideHeader) {
+  <header class="docs-primary-header component-page-header">
+    <h2> {{ componentName }} </h2>
+  </header>
+}

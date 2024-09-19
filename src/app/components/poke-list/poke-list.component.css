@@ -1,0 +1,98 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.content {
+  width: 90%;
+  align-items: center;
+  text-align: center;
+}
+
+.poke-card {
+  justify-content: center;
+  width: calc(25% - 1%);
+  margin: 0.5%;
+  box-sizing: border-box;
+  min-width: 180px;
+  display: inline-block;
+  background-color: white;
+  cursor: pointer;
+}
+
+.poke-number {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+.poke-favorite {
+  position: absolute;
+  right: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.favorite {
+  color: red;
+}
+.pokemon-name {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis; /* show ... */
+  white-space: nowrap;
+}
+
+mat-form-field {
+  width: 100%;
+  display: flex;
+}
+
+mat-card-subtitle {
+  text-align: left;
+}
+
+.poke-card:hover {
+  animation: card-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes card-pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1000px) {
+  .poke-card {
+    width: calc(32% - 1%);
+  }
+}
+
+@media (max-width: 780px) {
+  mat-card-title {
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 655px) {
+  .poke-card {
+    width: calc(50% - 2%);
+    float: none;
+    margin: 1%;
+    align-items: center;
+    align-content: center;
+  }
+}
